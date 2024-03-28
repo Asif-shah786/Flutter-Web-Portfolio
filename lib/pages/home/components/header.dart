@@ -19,7 +19,7 @@ class HeaderLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, _) {
       return Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(22),
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
@@ -30,9 +30,18 @@ class HeaderLogo extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: "A ",
+                    text: "{",
                     style: GoogleFonts.josefinSans(
-                      fontSize: 26.0,
+                      color: kPrimaryColor,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Philotech",
+                    style: GoogleFonts.josefinSans(
+                      fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
                       color: ref.watch(themeProvider).isDarkMode
@@ -41,10 +50,10 @@ class HeaderLogo extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Dev",
+                    text: "}",
                     style: GoogleFonts.josefinSans(
                       color: kPrimaryColor,
-                      fontSize: 26.0,
+                      fontSize: 30.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.5,
                     ),
@@ -80,30 +89,23 @@ class HeaderRow extends StatelessWidget {
           iconData: Icons.school,
         ),
         NameOnTap(
-          title: "Works",
-          onTap: () {},
-          iconData: Icons.work,
-        ),
-        NameOnTap(
           title: "Contact",
           onTap: () {},
           iconData: Icons.contact_mail,
         ),
         NameOnTap(
-          title: "Blogs",
-          onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
-          },
-          iconData: Icons.article,
+          title: "Portfolio",
+          onTap: () {},
+          iconData: Icons.work,
         ),
-        NameOnTap(
-          title: "Themes",
-          onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
-          },
-          iconData: Icons.light_mode_outlined,
-          isDarkTheme: true,
-        ),
+        // NameOnTap(
+        //   title: "Themes",
+        //   onTap: () {
+        //     Utilty.openUrl(AppConstants.mediumUrl);
+        //   },
+        //   iconData: Icons.light_mode_outlined,
+        //   isDarkTheme: true,
+        // ),
       ];
 
   @override
@@ -118,9 +120,7 @@ class HeaderRow extends StatelessWidget {
           return Row(children: [
             ...headerItems
                 .map(
-                  (item) => item.title == "Themes"
-                      ? const Text("")
-                      : MouseRegion(
+                  (item) => MouseRegion(
                           cursor: SystemMouseCursors.click,
                           child: Container(
                             margin: const EdgeInsets.only(right: 30.0),
@@ -134,11 +134,11 @@ class HeaderRow extends StatelessWidget {
                               child: Text(
                                 item.title,
                                 style: TextStyle(
-                                  color: item.title == "Blogs"
+                                  color: item.title == "Portfolio"
                                       ? kPrimaryColor
                                       : null,
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0,
+                                  fontWeight: item.title == "Portfolio" ? FontWeight.w700 : FontWeight.bold,
                                   letterSpacing: 2,
                                 ),
                               ),
@@ -147,7 +147,6 @@ class HeaderRow extends StatelessWidget {
                         ),
                 )
                 .toList(),
-            themeSwitch
           ]);
         },
       ),
@@ -172,7 +171,7 @@ class Header extends StatelessWidget {
   Widget buildMobileHeader(BuildContext context) {
     return SafeArea(
       child: Container(
-        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+        color: Colors.transparent,
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -196,7 +195,7 @@ class Header extends StatelessWidget {
   // Lets plan for mobile and smaller width screens
   Widget buildHeader(BuildContext context, Widget themeSwitch) {
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.95),
+      color: Colors.transparent,
       child: Container(
         padding: EdgeInsets.symmetric(
             horizontal: ScreenHelper.isDesktop(context) ? 24 : 16.0),

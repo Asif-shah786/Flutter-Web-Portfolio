@@ -12,6 +12,7 @@ class HomeProvider extends ChangeNotifier {
   final servicesKey = GlobalKey();
   final aboutKey = GlobalKey();
   final homeKey = GlobalKey();
+  final processKey = GlobalKey();
 
   Future<void> scrollToContact() async {
     final context = contactKey.currentContext;
@@ -55,7 +56,7 @@ class HomeProvider extends ChangeNotifier {
       scrollToHome();
     } else if (nameOnTap.title == "Services") {
       scrollToService();
-    } else if (nameOnTap.title == "Works") {
+    } else if (nameOnTap.title == "Portfolio") {
       scrollToPortfolio();
     } else if (nameOnTap.title == "About") {
       scrollToAbout();

@@ -12,7 +12,7 @@ import 'package:sand_simulation/home.dart';
 class Routes {
   static const String initial = "/";
   static const String demos = "demos";
-  static const String myWorks = "works";
+  static const String myWorks = "Portfolio";
   static const String simulation = "simulation";
   static const String sandSimulation = "simulation/sand";
   static const String jsonToDart = "json_to_dart";

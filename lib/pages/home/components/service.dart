@@ -42,15 +42,16 @@ class ServiceSection extends StatelessWidget {
       color: Colors.yellow[400]!,
     ),
     NameIconColor(
-      title: "Technical Blog Writer",
-      iconData: Icons.article,
-      color: Colors.blue[400]!,
-    ),
-    NameIconColor(
-      title: "Github Open Source",
-      iconData: Icons.code,
+      title: "UI/UX Design",
+      iconData: Icons.mobile_screen_share,
       color: Colors.orange[400]!,
     ),
+    NameIconColor(
+      title: "Courses by Industry Experts",
+      iconData: Icons.school_outlined,
+      color: Colors.blue[400]!,
+    ),
+
   ];
 
   @override
@@ -73,60 +74,16 @@ class ServiceSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Productive ,\n   Experienced",
-                style: GoogleFonts.josefinSans(
-                  fontWeight: FontWeight.w900,
-                  height: 1.8,
-                  letterSpacing: 2,
-                  fontSize: 18.0,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Utilty.openUrl(
-                      "https://github.com/AgnelSelvan/AgnelSelvan.github.io/raw/main/assets/files/Agnel-Selvan.pdf");
-                },
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(
-                    "DOWNLOAD CV",
-                    style: GoogleFonts.josefinSans(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
           Text(
-            "What I Do?",
+            "Solutions and Services",
             style: GoogleFonts.josefinSans(
               fontWeight: FontWeight.w900,
-              height: 1.3,
+              height: 1,
               fontSize: 35.0,
             ),
           ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            "I may not be perfect, but I'm surely of some help",
-            style: GoogleFonts.josefinSans(
-              color: Colors.grey[400],
-              fontSize: 14.0,
-            ),
-          ),
           SizedBox(
-            height: ScreenHelper.isDesktop(context) ? 140 : 70,
+            height: ScreenHelper.isDesktop(context) ? 70 : 30,
           ),
           Consumer(builder: (context, ref, _) {
             return Wrap(
@@ -182,61 +139,61 @@ class ServiceSection extends StatelessWidget {
                         ))
                     .toList());
           }),
-          const SizedBox(
-            height: 80.0,
-          ),
-          Container(
-            alignment: Alignment.center,
-            child: LayoutBuilder(
-              builder: (_context, constraints) {
-                return ResponsiveGridView.builder(
-                  padding: const EdgeInsets.all(0.0),
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: ResponsiveGridDelegate(
-                    mainAxisSpacing: 20.0,
-                    crossAxisSpacing: 20.0,
-                    maxCrossAxisExtent: ScreenHelper.isMobile(context)
-                        ? constraints.maxWidth / 1.0
-                        : ScreenHelper.isTablet(context)
-                            ? constraints.maxWidth / 2.0
-                            : 450.0,
-                    childAspectRatio: 5,
-                  ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      alignment: Alignment.center,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                designProcesses[index].imagePath,
-                                width: 40.0,
-                              ),
-                              const SizedBox(
-                                width: 15.0,
-                              ),
-                              Text(
-                                designProcesses[index].title,
-                                style: GoogleFonts.josefinSans(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: designProcesses.length,
-                );
-              },
-            ),
-          )
+          // const SizedBox(
+          //   height: 80.0,
+          // ),
+          // Container(
+          //   alignment: Alignment.center,
+          //   child: LayoutBuilder(
+          //     builder: (_context, constraints) {
+          //       return ResponsiveGridView.builder(
+          //         padding: const EdgeInsets.all(0.0),
+          //         shrinkWrap: true,
+          //         physics: const NeverScrollableScrollPhysics(),
+          //         gridDelegate: ResponsiveGridDelegate(
+          //           mainAxisSpacing: 20.0,
+          //           crossAxisSpacing: 20.0,
+          //           maxCrossAxisExtent: ScreenHelper.isMobile(context)
+          //               ? constraints.maxWidth / 1.0
+          //               : ScreenHelper.isTablet(context)
+          //                   ? constraints.maxWidth / 2.0
+          //                   : 450.0,
+          //           childAspectRatio: 5,
+          //         ),
+          //         itemBuilder: (BuildContext context, int index) {
+          //           return Container(
+          //             alignment: Alignment.center,
+          //             child: Column(
+          //               crossAxisAlignment: CrossAxisAlignment.center,
+          //               children: [
+          //                 Row(
+          //                   mainAxisAlignment: MainAxisAlignment.center,
+          //                   children: [
+          //                     Image.asset(
+          //                       designProcesses[index].imagePath,
+          //                       width: 40.0,
+          //                     ),
+          //                     const SizedBox(
+          //                       width: 15.0,
+          //                     ),
+          //                     Text(
+          //                       designProcesses[index].title,
+          //                       style: GoogleFonts.josefinSans(
+          //                         fontSize: 20.0,
+          //                         fontWeight: FontWeight.w700,
+          //                       ),
+          //                     )
+          //                   ],
+          //                 ),
+          //               ],
+          //             ),
+          //           );
+          //         },
+          //         itemCount: designProcesses.length,
+          //       );
+          //     },
+          //   ),
+          // )
         ],
       ),
     );

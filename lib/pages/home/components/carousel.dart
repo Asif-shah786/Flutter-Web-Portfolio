@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -13,7 +14,7 @@ class Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .85);
+        (ScreenHelper.isMobile(context) ? .98 : .8);
     return SizedBox(
       height: carouselContainerHeight,
       width: double.infinity,
@@ -44,6 +45,7 @@ class Carousel extends StatelessWidget {
                           context,
                           carouselItems(carouselContainerHeight)[index].text,
                           carouselItems(carouselContainerHeight)[index].image,
+                            carouselContainerHeight
                         ),
                         tablet: _buildTablet(
                           context,
@@ -69,21 +71,22 @@ class Carousel extends StatelessWidget {
 }
 
 // Big screens
-Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
+Widget _buildDesktop(BuildContext context, Widget text, Widget image, double height ) {
   return Center(
     child: ResponsiveWrapper(
       maxWidth: kDesktopMaxWidth,
       minWidth: kDesktopMaxWidth,
       defaultScale: false,
-      child: Row(
-        children: [
-          Expanded(
-            child: text,
-          ),
-          Expanded(
-            child: image,
-          )
-        ],
+      child: SizedBox(
+        height: height,
+        child: Row(
+          children: [
+            Expanded(child: text),
+            // Expanded(
+            //   child: image,
+            // )
+          ],
+        ),
       ),
     ),
   );
@@ -101,9 +104,9 @@ Widget _buildTablet(BuildContext context, Widget text, Widget image) {
           Expanded(
             child: text,
           ),
-          Expanded(
-            child: image,
-          )
+          // Expanded(
+          //   child: image,
+          // )
         ],
       ),
     ),

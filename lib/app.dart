@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
               ? MyThemes.darkTheme
               : MyThemes.lightTheme,
           child: MaterialApp.router(
-            title: "Agnel Selvan",
+            title: "Asif Shah",
             debugShowCheckedModeBanner: false,
             themeMode: ref.watch(themeProvider).themeMode,
             theme: MyThemes.lightTheme,

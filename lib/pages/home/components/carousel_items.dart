@@ -8,6 +8,7 @@ import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/utils.dart';
 
 import '../../../models/carousel_item_model.dart';
+import 'home_insights.dart';
 
 List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
     List.generate(
@@ -24,60 +25,59 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Mobile Application Developer",
+                      "We Build Your Software.".toUpperCase(),
                       style: GoogleFonts.josefinSans(
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w900,
-                        fontSize: 18.0,
+                        fontSize: 80.0,
                         letterSpacing: 2,
                       ),
                     ),
                     const SizedBox(
                       height: 18.0,
                     ),
-                    Text(
-                      "Agnel Selvan".toUpperCase(),
-                      style: GoogleFonts.josefinSans(
-                        fontSize: 40.0,
-                        fontWeight: FontWeight.w900,
-                        height: 1.3,
-                        letterSpacing: 2.3,
+                    const Text(
+                      "\"Our team of experts is dedicated to delivering cutting-edge software solutions that drive efficiency and productivity for businesses of all sizes. With a focus on innovation and user-centered design.\"",
+                      style: TextStyle(
+                        color: kCaptionColor,
+                        fontSize: 22.0,
+                        height: 1.5,
                       ),
                     ),
                     const SizedBox(
                       height: 10.0,
                     ),
-                    const Row(
-                      children: [
-                        Text(
-                          "Software Engineer, ",
-                          style: TextStyle(
-                            color: kCaptionColor,
-                            fontSize: 15.0,
-                            height: 1.0,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          Icons.location_on,
-                          color: kCaptionColor,
-                          size: 14,
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Text(
-                          "Mumbai",
-                          style: TextStyle(
-                            color: kCaptionColor,
-                            fontSize: 15.0,
-                            height: 1.0,
-                          ),
-                        )
-                      ],
-                    ),
+                    // const Row(
+                    //   children: [
+                    //     Text(
+                    //       "Our team of experts is dedicated to delivering cutting-edge software solutions that drive efficiency and productivity for businesses of all sizes. With a focus on innovation and user-centered design.",
+                    //       style: TextStyle(
+                    //         color: kCaptionColor,
+                    //         fontSize: 15.0,
+                    //         height: 1.0,
+                    //       ),
+                    //     ),
+                    //     SizedBox(
+                    //       width: 10,
+                    //     ),
+                    //     Icon(
+                    //       Icons.location_on,
+                    //       color: kCaptionColor,
+                    //       size: 14,
+                    //     ),
+                    //     SizedBox(
+                    //       width: 2,
+                    //     ),
+                    //     Text(
+                    //       "Pakistan",
+                    //       style: TextStyle(
+                    //         color: kCaptionColor,
+                    //         fontSize: 15.0,
+                    //         height: 1.0,
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                     const SizedBox(
                       height: 25.0,
                     ),
@@ -97,7 +97,7 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                             Utilty.openUrl(AppConstants.linkedInUrl);
                           },
                           child: Text(
-                            "Let's Talk",
+                            "Explore more!",
                             style: TextStyle(
                               color: Colors.grey[800],
                               fontSize: 13.0,
@@ -107,47 +107,51 @@ List<CarouselItemModel> carouselItems(double carouselContainerHeight) =>
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 25,
+                    ),
                   ],
                 ),
               ),
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: SizedBox(
-                  height: carouselContainerHeight - 70,
-                  child: Consumer(builder: (context, ref, _) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: AppConstants.socialLoginDatas
-                          .map((e) => Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: InkWell(
-                                  onTap: e.onTap,
-                                  child: Container(
-                                    width: 30,
-                                    height: 30,
-                                    margin: const EdgeInsets.all(5),
-                                    // child: Image.asset(e.title),
-                                    child: Center(
-                                      child: FaIcon(
-                                        e.iconData,
-                                        color:
-                                            ref.watch(themeProvider).isDarkMode
-                                                ? MyThemes.lightTheme
-                                                    .scaffoldBackgroundColor
-                                                : MyThemes.darkTheme
-                                                    .scaffoldBackgroundColor
-                                                    .withOpacity(0.8),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ))
-                          .toList(),
-                    );
-                  }),
-                ),
-              )
+              const SizedBox(height: 50,),
+              // MouseRegion(
+              //   cursor: SystemMouseCursors.click,
+              //   child: SizedBox(
+              //     height: carouselContainerHeight - 70,
+              //     child: Consumer(builder: (context, ref, _) {
+              //       return Row(
+              //         mainAxisAlignment: MainAxisAlignment.end,
+              //         crossAxisAlignment: CrossAxisAlignment.end,
+              //         children: AppConstants.socialLoginDatas
+              //             .map((e) => Padding(
+              //                   padding: const EdgeInsets.all(4.0),
+              //                   child: InkWell(
+              //                     onTap: e.onTap,
+              //                     child: Container(
+              //                       width: 30,
+              //                       height: 30,
+              //                       margin: const EdgeInsets.all(5),
+              //                       // child: Image.asset(e.title),
+              //                       child: Center(
+              //                         child: FaIcon(
+              //                           e.iconData,
+              //                           color:
+              //                               ref.watch(themeProvider).isDarkMode
+              //                                   ? MyThemes.lightTheme
+              //                                       .scaffoldBackgroundColor
+              //                                   : MyThemes.darkTheme
+              //                                       .scaffoldBackgroundColor
+              //                                       .withOpacity(0.8),
+              //                         ),
+              //                       ),
+              //                     ),
+              //                   ),
+              //                 ))
+              //             .toList(),
+              //       );
+              //     }),
+              //   ),
+              // )   ,
             ],
           ),
         ),
