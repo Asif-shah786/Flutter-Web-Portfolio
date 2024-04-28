@@ -10,7 +10,7 @@ class HomeProvider extends ChangeNotifier {
   final contactKey = GlobalKey();
   final portfolioKey = GlobalKey();
   final servicesKey = GlobalKey();
-  final aboutKey = GlobalKey();
+  final processDetailsKey = GlobalKey();
   final homeKey = GlobalKey();
   final processKey = GlobalKey();
 
@@ -29,8 +29,8 @@ class HomeProvider extends ChangeNotifier {
     await _scroll(context);
   }
 
-  Future<void> scrollToAbout() async {
-    final context = aboutKey.currentContext;
+  Future<void> scrollToProcessDetails() async {
+    final context = processDetailsKey.currentContext;
     await _scroll(context);
   }
 
@@ -58,8 +58,8 @@ class HomeProvider extends ChangeNotifier {
       scrollToService();
     } else if (nameOnTap.title == "Portfolio") {
       scrollToPortfolio();
-    } else if (nameOnTap.title == "About") {
-      scrollToAbout();
+    } else if (nameOnTap.title == "Process") {
+      scrollToProcessDetails();
     } else if (nameOnTap.title == "Blog") {
       Utilty.openUrl(AppConstants.mediumUrl);
     }

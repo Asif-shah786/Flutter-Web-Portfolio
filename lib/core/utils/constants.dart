@@ -16,10 +16,10 @@ double getMobileMaxWidth(BuildContext context) =>
 
 class AppConstants {
   static const linkedInUrl =
-      "https://www.linkedin.com/in/agnel-selvan-328421192/";
-  static const instagramUrl = "https://www.instagram.com/_agnel.selvan_/";
-  static const githubUrl = "https://github.com/AgnelSelvan";
-  static const mediumUrl = "https://medium.com/@agnelselvan";
+      "https://www.linkedin.com/in/asif-shah-66750319b";
+  static const instagramUrl = "https://www.instagram.com/_syedasif07/";
+  static const githubUrl = "https://github.com/Asif-shah786";
+  static const mediumUrl = "https://medium.com/@Asif-shah786";
 
   static const _assets = "assets/";
   static const _outputs = "outputs/";
@@ -50,7 +50,13 @@ class AppConstants {
   static const javascriptImage = _techImages + "javascript.png";
 
   static const _projectsImages = _images + "projects/";
-  static const smartStoreImage = _projectsImages + "1.jpeg";
+  static const plank = _projectsImages + "plank.jpg";
+  static const plankAdmin = _projectsImages + "plank_admin.jpg";
+  static const amz = _projectsImages + "amz.jpg";
+  static const nutuneFitness = _projectsImages + "nutuneFitness.jpg";
+  static const etrip = _projectsImages + "etrip.jpg";
+  static const sran = _projectsImages + "sran.jpeg";
+  static const crew = _projectsImages + "crew.jpg";
   static const crossTheRoadImage = _projectsImages + "2.jpeg";
   static const newsUpImage = _projectsImages + "3.jpeg";
   static const musicLabImage = _projectsImages + "4.jpeg";
@@ -94,4 +100,12 @@ class AppConstants {
           Utilty.openUrl(mediumUrl);
         }),
   ];
+}
+
+
+enum StoreButtonType {
+  appStore,
+  playStore,
+  github,
+  website,
 }

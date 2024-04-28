@@ -53,6 +53,8 @@ dependencies:
   url_launcher: ^6.0.20
   particles_flutter: ^0.1.4
   flip_card: ^0.7.0
+  wave_divider: ^0.0.3
+  rename: ^3.0.2
 
 dev_dependencies:
   flutter_lints: ^1.0.0
@@ -77,4 +79,3 @@ flutter:
     - assets/images/technology/
     - assets/images/aboutDetails/
     - assets/images/development process/
-    - outputs/gif/

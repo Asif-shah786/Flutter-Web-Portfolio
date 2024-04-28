@@ -74,7 +74,9 @@ class ServiceSection extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(
+          SizedBox(
+            height: ScreenHelper.isDesktop(context) ? 60 : 20,
+          ),          Text(
             "Solutions and Services",
             style: GoogleFonts.josefinSans(
               fontWeight: FontWeight.w900,
@@ -83,7 +85,7 @@ class ServiceSection extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: ScreenHelper.isDesktop(context) ? 70 : 30,
+            height: ScreenHelper.isDesktop(context) ? 40 : 16,
           ),
           Consumer(builder: (context, ref, _) {
             return Wrap(

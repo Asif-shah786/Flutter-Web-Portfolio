@@ -62,6 +62,17 @@ class WorkSection extends StatelessWidget {
                       projectModel.appPhotos!,
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
                       height: 250,
+                      frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
+                        if (wasSynchronouslyLoaded) {
+                          return child;
+                        }
+                        return AnimatedOpacity(
+                          child: child,
+                          opacity: frame == null ? 0 : 1,
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeOut,
+                        );
+                      },
                     ),
                   const SizedBox(
                     width: 20,

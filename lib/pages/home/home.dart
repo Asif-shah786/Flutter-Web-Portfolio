@@ -1,4 +1,3 @@
-
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,12 +13,12 @@ import 'package:my_portfolio/provider/home.dart';
 import 'package:my_portfolio/provider/theme.dart';
 import 'package:my_portfolio/widgets/switch.dart';
 import 'package:particles_flutter/particles_flutter.dart';
+import 'package:wave_divider/wave_divider.dart';
 
 import '../../core/utils/utils.dart';
 import 'components/about_details.dart';
 import 'components/home_insights.dart';
 import 'components/software_development_process.dart';
-
 
 class Home extends ConsumerStatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -48,6 +47,23 @@ class _HomeState extends ConsumerState<Home>
     super.initState();
   }
 
+  @override
+  void didChangeDependencies() {
+    precacheImage(const AssetImage("assets/images/projects/amz.jpg"), context);
+    precacheImage(const AssetImage("assets/images/projects/crew.jpg"), context);
+    precacheImage(
+        const AssetImage("assets/images/projects/etrip.jpg"), context);
+    precacheImage(
+        const AssetImage("assets/images/projects/nutuneFitness.jpg"), context);
+    precacheImage(
+        const AssetImage("assets/images/projects/plank.jpg"), context);
+    precacheImage(
+        const AssetImage("assets/images/projects/plank_admin.jpg"), context);
+    precacheImage(
+        const AssetImage("assets/images/projects/sran.jpeg"), context);
+    super.didChangeDependencies();
+  }
+
   Widget _buildPage() {
     return Stack(
       children: [
@@ -65,25 +81,40 @@ class _HomeState extends ConsumerState<Home>
                   key: _homeProvider.homeKey,
                 ),
                 const HomeInsights(),
-                const SizedBox(
-                  height: 16,
-                ),
-                AboutDetailsSection(
-                  key: _homeProvider.aboutKey,
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                SoftwareDevelopmentProcessSection(
-                  key: _homeProvider.processKey,
-                ),
+                // const WaveDivider(
+                //   thickness: 3,
+                //   color: Colors.amber,
+                //   waveHeight: 7,
+                //   waveWidth: 14,
+                //   isVertical: false,
+                // ),
                 const SizedBox(
                   height: 16,
                 ),
                 PortfoliosSection(
                     key: _homeProvider.portfolioKey,
-                    projects: ProjectModel.projects.sublist(2, 4)),
-
+                    projects: ProjectModel.projects),
+                // const WaveDivider(
+                //   thickness: 3,
+                //   color: Colors.amber,
+                //   waveHeight: 7,
+                //   waveWidth: 14,
+                //   isVertical: false,
+                // ),
+                const ProcessDetailsSection(),
+                const SizedBox(
+                  height: 16,
+                ),
+                // const WaveDivider(
+                //   thickness: 3,
+                //   color: Colors.amber,
+                //   waveHeight: 7,
+                //   waveWidth: 14,
+                //   isVertical: false,
+                // ),
+                SoftwareDevelopmentProcessSection(
+                  key: _homeProvider.processDetailsKey,
+                ),
                 ServiceSection(
                   key: _homeProvider.servicesKey,
                 ),

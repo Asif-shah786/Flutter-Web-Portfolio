@@ -11,14 +11,14 @@ class AboutDetails {
       {required this.title, required this.description, required this.image});
 }
 
-class AboutDetailsSection extends StatefulWidget {
-  const AboutDetailsSection({Key? key}) : super(key: key);
+class ProcessDetailsSection extends StatefulWidget {
+  const ProcessDetailsSection({Key? key}) : super(key: key);
 
   @override
-  State<AboutDetailsSection> createState() => _AboutDetailsSectionState();
+  State<ProcessDetailsSection> createState() => _ProcessDetailsSectionState();
 }
 
-class _AboutDetailsSectionState extends State<AboutDetailsSection> {
+class _ProcessDetailsSectionState extends State<ProcessDetailsSection> {
   List<AboutDetails> details = [
     const AboutDetails(
       title: 'Solution focused, not hours focused',
@@ -59,43 +59,80 @@ class _AboutDetailsSectionState extends State<AboutDetailsSection> {
     return Center(
       child: LayoutBuilder(
         builder: (context, constraints) {
+          double textScaleFactor = MediaQuery.of(context).textScaleFactor;
+          double titleFontSize = ScreenHelper.isDesktop(context)
+              ? 45.0
+              : (ScreenHelper.isTablet(context) ? 35.0 : 16.0);
+          double subTitleFontSize = ScreenHelper.isDesktop(context)
+              ? 22.0
+              : (ScreenHelper.isTablet(context) ? 18.0 : 12.0);
           return ResponsiveWrapper(
             maxWidth: width,
             minWidth: width,
             defaultScale: false,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Column(
+                const SizedBox(
+                  height: 40,
+                ),
+                Text(
+                  "Why Choose Us?",
+                  style: GoogleFonts.josefinSans(
+                    fontWeight: FontWeight.w900,
+                    height: 1.2,
+                    fontSize: titleFontSize * textScaleFactor,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                Text(
+                  "\"Our strategy is simplicity. Yes, go lean and start small but don’t skip steps.\"",
+                  style: GoogleFonts.josefinSans(
+                    fontWeight: FontWeight.w500,
+                    height: 1,
+                    fontSize: subTitleFontSize * textScaleFactor,
+                    color: Colors.grey,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    AboutDetailCard(item: details[0], width: width),
-                    AboutDetailCard(item: details[1], width: width),
-                    if (constraints.maxWidth < 720.0)
-                      Expanded(
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 30,
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AboutDetailCard(item: details[0], width: width),
+                        AboutDetailCard(item: details[1], width: width),
+                        if (constraints.maxWidth < 720.0)
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                AboutDetailCard(
+                                    item: details[2], width: width),
+                                AboutDetailCard(
+                                    item: details[3], width: width),
+                              ],
                             ),
-                            AboutDetailCard(
-                                item: details[2], width: width),
-                            AboutDetailCard(
-                                item: details[3], width: width),
-                          ],
-                        ),
+                          ),
+                      ],
+                    ),
+                    if (constraints.maxWidth > 720.0)
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(
+                            height: 300,
+                          ),
+                          AboutDetailCard(item: details[2], width: width),
+                          AboutDetailCard(item: details[3], width: width),
+                        ],
                       ),
                   ],
                 ),
-                if (constraints.maxWidth > 720.0)
-                  Column(
-                    children: [
-                      const SizedBox(
-                        height: 300,
-                      ),
-                      AboutDetailCard(item: details[2], width: width),
-                      AboutDetailCard(item: details[3], width: width),
-                    ],
-                  ),
               ],
             ),
           );
@@ -137,7 +174,7 @@ class _AboutDetailsSectionState extends State<AboutDetailsSection> {
   //                       height: 25.0,
   //                     ),
   //                     Text(
-  //                       "I'm Agnel Selvan, A Flutter and iOS Developer and Technical Blog Writer",
+  //                       "I'm Asif Shah, A Flutter and iOS Developer and Technical Blog Writer",
   //                       style: GoogleFonts.josefinSans(
   //                         fontWeight: FontWeight.bold,
   //                         height: 1.3,
@@ -274,6 +311,7 @@ class _AboutDetailCardState extends State<AboutDetailCard> {
     return SizedBox(
       width: ScreenHelper.isMobile(context) ? widget.width * 0.9 : widget.width * 0.46,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

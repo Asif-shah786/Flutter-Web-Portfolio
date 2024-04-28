@@ -79,7 +79,7 @@ class HeaderRow extends StatelessWidget {
           onTap: () {},
         ),
         NameOnTap(
-          title: "About",
+          title: "Process",
           onTap: () {},
           iconData: Icons.info,
         ),

@@ -28,126 +28,79 @@ class ProjectModel {
 
   static List<ProjectModel> projects = [
     ProjectModel(
-      project: "Flutter Package",
-      title: "UPI QRCode Generator",
-      description:
-          "This Plugin mainly focus on the generation of UPI Payment QRCode, so that the user can scan the QRCode for paying the specific amount of money using UPI.",
-      appPhotos: AppConstants.flutterImage,
-      projectLink: "https://pub.dev/packages/upi_payment_qrcode_generator",
-      techUsed: [
-        TechnologyConstants.flutter,
-      ],
-      buttonText: "Pub Dev",
-    ),
-    ProjectModel(
-      project: "Flutter Package",
-      title: "WIFI IP Details",
-      description:
-          "This package allows Flutter apps to get Wifi IP Details like Internet Service Provider(ISP), Country, Public IP Address, etc.",
-      appPhotos: AppConstants.flutterImage,
-      projectLink: "https://pub.dev/packages/wifi_ip_details",
-      techUsed: [
-        TechnologyConstants.flutter,
-      ],
-      buttonText: "Pub Dev",
-    ),
-    ProjectModel(
       project: "Flutter App",
-      title: "Smart Store App",
+      title: "Plank: Full Body Workouts",
       description:
-          "The Idea came during the pandemics to solve the issue of social distancing in supermarkets.",
-      appPhotos: AppConstants.smartStoreImage,
-      projectLink: "https://github.com/AgnelSelvan/Smart-Store-Mobile-App",
+          "Full Body Workout, your ultimate solution for a stronger, more defined core and an all-round fitness boost. Ready to transform your plank workouts and achieve the flat stomach you desire? Then look no further!",
+      appPhotos: AppConstants.plank,
+      projectLink: "https://play.google.com/store/apps/details?id=com.home.workout.apps.plank.workout.fitness.plank",
       techUsed: [
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
-        TechnologyConstants.flask,
-        TechnologyConstants.python,
-        TechnologyConstants.razorPay
       ],
-      buttonText: "Github Link",
+      buttonText:  "Product Link",
     ),
     ProjectModel(
-      project: "Flutter",
-      title: "Json to Dart Generator",
-      description: "Generate Dart class using Json Object using Flutter",
-      appPhotos: AppConstants.jsonToDartImage,
-      internalLink: true,
-      projectLink: Routes.jsonToDart,
-      techUsed: [
-        TechnologyConstants.flutter,
-      ],
-      buttonText: "Product Link",
-    ),
-    ProjectModel(
-      project: "Flutter",
-      title: "Particle Simulations",
+      project: "Flutter App",
+      title: "3t: User App",
       description:
-          "Created a particle simulation that adheres to Newton's Laws of Motion 🌟📐.",
-      appPhotos: AppConstants.simulationImage,
-      internalLink: true,
-      projectLink: Routes.simulation,
+      "Welcome to The 3T Fitness app At 3T Fitness, we're dedicated to empowering you with the tools to master your health and fitness for life. Whether you're a seasoned fitness enthusiast or just embarking on your wellness journey, our mission is to provide a service that assists users in achieving their fitness goals, staying motivated, and leading a healthier lifestyle.",
+      appPhotos: AppConstants.nutuneFitness,
+      projectLink: "https://app.nutonefitness.com/",
       techUsed: [
         TechnologyConstants.flutter,
+        TechnologyConstants.firebase,
       ],
-      buttonText: "Product Link",
+      buttonText:  "Product Link",
     ),
     ProjectModel(
-      project: "Swift App",
-      title: "Cross The Road Game",
-      description: "Cross the Road game developed using Swift and SceneKit",
-      appPhotos: AppConstants.crossTheRoadImage,
-      projectLink: "https://github.com/AgnelSelvan/Cross-the-road",
+      project: "Flutter App",
+      title: "ETRIP Your Gateway To Exquisite Journeys",
+      description: "Experience Saudi Arabia like never before! Get a year-long Multiple Personal Visit Visa to explore this amazing country at an incredible price.",
+      appPhotos: AppConstants.etrip,
+      projectLink: "https://etrip.pk/",
+
       techUsed: [
-        TechnologyConstants.swift,
+        TechnologyConstants.flutter,
+        TechnologyConstants.firebase,
         TechnologyConstants.sceneKit,
       ],
+      buttonText: "Website Link",
+    ),
+    ProjectModel(
+      project: "Flutter App",
+      title: "SRAN (Posture Corrector)",
+      description: "SRAN is an innovative mobile app designed to complement our line of posture correctors, brought to you by Shay Raja. It serves as your personalized posture tracking companion, helping you achieve better posture and overall well-being.",
+      appPhotos: AppConstants.sran,
+      projectLink: 'https://github.com/Asif-shah786/sran.git',
+      techUsed: [
+        TechnologyConstants.flutter,
+      ],
       buttonText: "Github Link",
     ),
     ProjectModel(
       project: "Flutter App",
-      title: "News Up App",
+      title: "Plank Admin Dashboard",
       description:
-          "This application is used basically for viewing different news. Launched the app in Amazon AppStore",
-      appPhotos: AppConstants.newsUpImage,
-      projectLink: "https://www.amazon.com/gp/product/B08669JDX7",
+      "Full Body Workout, your ultimate solution for a stronger, more defined core and an all-round fitness boost. Ready to transform your plank workouts and achieve the flat stomach you desire? Then look no further!",
+      appPhotos: AppConstants.plankAdmin,
+      projectLink: "https://play.google.com/store/apps/details?id=com.home.workout.apps.plank.workout.fitness.plank",
       techUsed: [
         TechnologyConstants.flutter,
+        TechnologyConstants.firebase,
       ],
+      buttonText:  "Product Link",
     ),
     ProjectModel(
       project: "Flutter App",
-      title: "Music Lab",
-      description:
-          "A Simple Music Player App. Launched the app in Amazon AppStore",
-      appPhotos: AppConstants.musicLabImage,
-      projectLink: "https://www.amazon.com/gp/product/B08WL2XFGW",
+      title: "Want Yatch Crew",
+      description: "WantYachtCrew is a game-changing app transforming yacht crew recruitment. Designed for Yacht Captains and Crew, the platform offers easy account creation, empowering Captains to showcase yacht details and browse crew profiles through a Tinder-like card system, swiping right for interest. Crew members display qualifications and availability, accepting or rejecting Captain requests as per schedule. Seamlessly integrated chat fosters direct communication for finalizing arrangements, while secure in-app payments facilitate smooth transactions. Location services ensure real-time mapping of yacht, Captain, and crew locations, enhancing coordination. ",
+      appPhotos: AppConstants.crew,
+      projectLink: 'https://www.wantyachtcrew.com/',
       techUsed: [
         TechnologyConstants.flutter,
       ],
-    ),
-    ProjectModel(
-      project: "PHP Website",
-      title: "Computer Store",
-      description:
-          "This is a complete online e-commerce website of selling computer and seperate admin panel is built for handling the order request and only payement is added.",
-      appPhotos: AppConstants.computerStoreImage,
-      projectLink: "https://github.com/AgnelSelvan/computer-store.git",
-      techUsed: [
-        TechnologyConstants.php,
-        TechnologyConstants.razorPay,
-      ],
-    ),
-    ProjectModel(
-      project: "Python",
-      title: "Personal Face and Emotion Recognition",
-      description:
-          "The model will recognize each face and identify their name based on the trained model. CNN is used for training the dataset.",
-      appPhotos: AppConstants.personalFaceImage,
-      projectLink: "https://github.com/AgnelSelvan/Emotion-Recognition.git",
-      techUsed: [
-        TechnologyConstants.python,
-      ],
+      buttonText: "Website Link",
     ),
   ];
 
